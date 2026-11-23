@@ -1,0 +1,56 @@
+/* Perbaikan responsif tambahan untuk template tooplate.
+   Dimuat setelah tooplate-style.css, jangan edit file template aslinya. */
+
+/* Tablet (sm): kolom footer jadi 33% tapi judul h4 masih ukuran desktop
+   sehingga "Pengumuman/Informasi" menabrak kolom "Jam Buka". */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    footer h4 {
+        font-size: 1.35em;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    footer .latest-stories p,
+    footer .opening-hours p,
+    footer .contact-info p {
+        font-size: 13px;
+    }
+    header .text-align-right span {
+        display: inline-block;
+        margin-left: 8px;
+    }
+}
+
+/* Ponsel: cegah teks/elemen lebar memicu scroll horizontal. */
+@media only screen and (max-width: 767px) {
+    body {
+        overflow-x: hidden;
+    }
+    footer h4,
+    .section-title h2 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    footer .border-top .col-xs-12,
+    footer .border-top div[class^="col-"] {
+        text-align: center;
+    }
+    .footer-link a {
+        display: inline-block;
+        margin: 4px 8px;
+    }
+    /* tombol & input sentuh minimal 44px */
+    .form-control,
+    #cf-submit {
+        min-height: 44px;
+    }
+}
+
+/* Tabel data (riwayat periksa, hasil lab, billing) supaya bisa digeser
+   horizontal di layar kecil, bukan merusak lebar halaman. */
+@media only screen and (max-width: 991px) {
+    .table-responsive-auto {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
